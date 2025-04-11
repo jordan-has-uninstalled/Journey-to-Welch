@@ -1,14 +1,14 @@
 # html_fantasy_game
 Text-based Adventure Game written using HTML, CSS, and JavaScript.
 
-Website Appearance and Interface:
+# Website Appearance and Interface:
 The website will consist of two pages: A title page with the name of the game, a start button, and credits. Clicking the start button will take you to the actual game page. The game page will consist of a text input box for the player to interact with the game, a submit button to send your commands to the game, and a window that will print the game’s text output. There may also be another window to display graphics depending on time. 
 
 The game itself will be text only, the website that contains the game will have colorful, hand-drawn graphics. Graphics for the website will include but aren’t limited to the webpage’s background, the borders for the game text and the input box, the submit button, and a detailed title screen webpage with credits. 
 
 Depending on time it is also a goal to have graphics that correspond to things that happen in game. For example, if you fight an enemy, you will see a graphic of your character fighting it in its own window. 
 
-Game Rules, Features, and Challenges:
+# Game Rules, Features, and Challenges:
 
   Rules and Mechanics:
   The game is turn-based, and players must choose between actions like ATTACK, DEFEND, or MAGIC during combat.
@@ -29,7 +29,7 @@ Game Rules, Features, and Challenges:
   Uncovering hidden content, skills, and outcomes through replayability
 
 
-Key Personnel:
+# Key Personnel:
   Amaris Aker - (JavaScript Developer–Story Elements/Dialogue/Choices and Paths)
   Jordan Alvarado - (Lead JavaScript Developer–Logic/Flow and Implementation)
   Katia De Los Santos - (CSS Developer)
@@ -38,7 +38,7 @@ Key Personnel:
   Adela Torres - (HTML Developer)
   Martin Zuniga - (Sound Designer)
 
-SOW (Statement of Work):
+# SOW (Statement of Work):
   Web Development: 
       Designing and building a responsive and interactive website using HTML, CSS, and Javascript.
       Ensure the website can be compatible desktop and mobile users
@@ -52,7 +52,7 @@ SOW (Statement of Work):
   Sound Design / Production: 
       Create and find sounds to use for the game to add immersion
 
-Description of Work:
+# Description of Work:
   Developing the Game Engine:
       Build the complete game engine using JavaScript, incorporating systems for combat, story branching logic, and player stat management
   Narrative Design:
@@ -68,7 +68,7 @@ Description of Work:
   Project Documentation:
       Prepare and deliver the supporting documentation, including the project overview, technical notes, and credits
 
-Audio / Sound Design
+# Audio / Sound Design
   Atmosphere - The music will be used to create an atmosphere of fantasy and magic. We want to create an environment inspired by things like: Runescape, Elder Scrolls, or The Witcher.
   Key Actions - Sounds will not only be added during gameplay, but for key actions like:
       Correct or Incorrect command input
@@ -81,7 +81,7 @@ Audio / Sound Design
       Positive sounds to indicate successful progress or correct actions
   Sound Testing - After audio and sounds are added, all audio will be tested to ensure sound levels and cues will not interfere with the player’s engagement into the narrative.
 
-Budget:
+# Budget:
 This is a zero-budget academic project. No paid tools or services will be used. All resources (software, hosting, collaboration tools) will be free to use under appropriate licenses.
 
 Tools: Visual Studio Code, GitHub
@@ -90,7 +90,7 @@ Hosting: GitHub Pages (free)
 
 Estimated Cost: $0.00
 
-Questions to Address
+# Questions to Address
   What we want to do:
       Develop a text-based fantasy adventure game with interactive storytelling, turn-based combat mechanics, a custom webpage, and original artwork.
   Why we want to do it:
