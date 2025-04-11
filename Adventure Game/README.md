@@ -30,7 +30,7 @@ Depending on time it is also a goal to have graphics that correspond to things t
 
 
 # Key Personnel:
-  Amaris Aker - (JavaScript Developer–Story Elements/Dialogue/Choices and Paths)
+  A.A - (JavaScript Developer–Story Elements/Dialogue/Choices and Paths)
   Jordan Alvarado - (Lead JavaScript Developer–Logic/Flow and Implementation)
   Katia De Los Santos - (CSS Developer)
   Lance Henschel - (HTML Developer)
