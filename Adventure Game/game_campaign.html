@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
-
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Journey to Welch: A Fantasy Adventure Game</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+<div class="frame-container">
+    <img src="Ui.png" alt="Frame">
+    <img id="Lilmush.gif" src="" alt="Enemy" />
 
-
-  <style>
-   body {
-    background-image: url('Bg.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-</style>
-    
-
-  
-  </body>
-
+    <div id="game-output"></div>
+    <input id="game-input" type="text" autocomplete="off" />
+    <button id="submit-button" aria-label="Submit"></button>
+</div>
+<script src="game.js"></script>
+</body>
 </html>
