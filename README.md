@@ -13,21 +13,10 @@ Depending on time it is also a goal to have graphics that correspond to things t
 * Rules and Mechanics:
     - The game is turn-based, and players must choose between actions like ATTACK, DEFEND, or MAGIC during combat.
     - Health Points (HP) and Magic Points (MP) are tracked throughout the journey.
-    - Players can earn coins, skill points, and titles through exploration and combat.
-    - Player decisions affect the narrative path and can lead to multiple endings.
 
 * Features:
-    - Interactive narrative with meaningful choices
-    - Classic RPG mechanics like skill trees, item purchases, and boss fights
     - Visual and audio assets to enhance immersion
     - A responsive webpage that hosts the game in a browser
-  
-* Challenges Presented to Players:
-    - Strategic combat choices to defeat enemies while managing limited HP and MP
-    - Navigating story forks that can lead to success or failure based on decisions
-    - Balancing when to take risks, use resources, or avoid conflict
-    - Uncovering hidden content, skills, and outcomes through replayability
-
 
 # Key Personnel:
 * Amaris Aker - (JavaScript Developer–Story Elements/Dialogue/Choices and Paths)
@@ -94,7 +83,7 @@ This is a zero-budget academic project. No paid tools or services will be used. 
 * What we want to do:
     - Develop a text-based fantasy adventure game with interactive storytelling, turn-based combat mechanics, a custom webpage, and original artwork.
 * Why we want to do it:
-    - To provide players with a story-driven RPG experience that emphasizes player choice, exploration, narrative immersion, and visual appeal.
+    - To provide players with a story-driven RPG experience
 * How we plan to do it:
     - By designing and programming the game in JavaScript, developing a responsive webpage using HTML and CSS, and creating original artwork to enhance the game's world and characters.
 * How will we know if we have succeeded:
