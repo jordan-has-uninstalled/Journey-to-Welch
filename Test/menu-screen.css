@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background: url('Art/Bg.png') repeat center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Seagram', sans-serif;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 50px;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.9)) 
+            drop-shadow(0 0 12px rgba(0, 0, 0, 0.7));
+}
+
+.logo-container img {
+    max-width: 80%;
+    height: auto;
+}
+
+.start-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Seagram', sans-serif;
+    font-size: 32px;
+    cursor: pointer;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease;
+    outline: none;
+    margin-bottom: 60px;
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+}
+
+.credits-footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.credits-row {
+    display: inline-flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.credit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+}
+
+.credit-role {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+    .credits-row {
+        gap: 20px;
+    }
+    .credit-item {
+        min-width: 100px;
+    }
+}
+
+@font-face {
+    font-family: 'Seagram';
+    src: url('fonts/Seagram tfb.ttf') format('truetype');
+}
