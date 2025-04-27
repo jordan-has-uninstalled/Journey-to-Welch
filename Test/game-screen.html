@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Journey to Welch: A Fantasy Adventure Game</title>
+    <link rel="stylesheet" href="game-screen.css" />
+</head>
+<body>
+    <div class="frame-container">
+      <div id="menu-button" onclick="location.href='menu.html'">
+        MENU
+    </div>
+        <img src="Art/Ui.png" alt="Frame">
+        <img id="game-image" src="" alt="Enemy" />
+
+        <div id="game-output"></div>
+        <input id="game-input" type="text" autocomplete="off" />
+        <button id="submit-button" aria-label="Submit"></button>
+
+    </div>
+    <!-- music -->
+    <audio id="bg-music" loop>
+      <source src="music/Music1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="tiny-mushroom-music" loop>
+      <source src="music/Music4.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="big-mushroom-music" loop>
+      <source src="music/Music15.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="endgame-music">
+      <source src="music/Music2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="game-over-music">
+      <source src="music/Music7.mp3" type="audio/mpeg">
+    </audio>
+    <!-- sound effects -->
+    <audio id="attack1">
+      <source src="sounds/attack1.wav" type="audio/mpeg">
+    </audio>
+    <audio id="attack2">
+      <source src="sounds/attack2.wav" type="audio/mpeg">
+    </audio>
+    <audio id="attack3">
+      <source src="sounds/attack3.wav" type="audio/mpeg">
+    </audio>
+    <audio id="attack4">
+      <source src="sounds/attack4.wav" type="audio/mpeg">
+    </audio>
+    <audio id="cave-collapse">
+      <source src="sounds/cave-collapse.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="mushroom-roar">
+      <source src="sounds/mushroom-roar.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cave-ambience" loop>
+      <source src="sounds/cave-ambience.wav" type="audio/mpeg">
+    </audio>
+    <audio id="rumble">
+      <source src="sounds/rumble.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="fireball">
+      <source src="sounds/fireball.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="defend">
+      <source src="sounds/block.wav" type="audio/mpeg">
+    </audio>
+
+    <script src="game.js" defer></script>
+</body>
+</html>
