@@ -4,7 +4,7 @@ html, body {
     padding: 0;
     overflow: hidden;
     font-family: 'Seagram', sans-serif;
-    background: url('../Art/Bg.png') repeat center top;
+    background: url('Art/Bg.png') repeat center top;
     background-size: cover;
     color: white;
     text-shadow: 
@@ -93,5 +93,5 @@ li {
 
 @font-face {
     font-family: 'Seagram';
-    src: url('../fonts/Seagram tfb.ttf') format('truetype');
+    src: url('Fonts/Seagram tfb.ttf') format('truetype');
 }
