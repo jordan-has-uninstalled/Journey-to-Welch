@@ -70,8 +70,8 @@ function logTextOneWordAtATime(text, delay = WORD_DELAY, callback = null) {
 function updateStatsDisplay() {
   const statsElement = document.getElementById("stats");
   statsElement.innerHTML = `
-    <p id="enemy-hp">Enemy HP: ${gameState.enemyHP > 0 ? gameState.enemyHP : 0}</p>
-    <p id="player-stats">Your HP: ${gameState.playerHP} MP: ${gameState.playerMP}</p>
+    <p id="enemy-hp">Enemy HP: <span class="enemy-stat">${gameState.enemyHP > 0 ? gameState.enemyHP : 0}</span></p>
+    <p id="player-stats">Your HP: <span class="player-stat">${gameState.playerHP}  </span> MP: <span class="mp-stat">${gameState.playerMP}</span></p>
   `;
 }
 
@@ -210,24 +210,26 @@ function startBattle(enemyType) {
   
   // show stats
   document.getElementById("stats").style.display = 'block';
-  updateStatsDisplay();
 
   if (enemyType === 'mushroom') {
     playSound("cave-ambience")
     playMusic('tiny-mushroom-music');
-    gameState.enemyHP = 10;
+    gameState.enemyHP = 100;
     gameState.tutorialStep = 1; // start tutorial sequence
     gameImage.src = 'Art/Lilmush.gif';
     gameImage.classList.add('show');
     
     logTextOneWordAtATime("You step into the Murky Dungeon and see a tiny Mushroom Creature charging at you!", WORD_DELAY, () => {
-      logText("TINY MUSHROOM CREATURE: 10HP");
+      logText("TINY MUSHROOM CREATURE: 100HP");
       // show first tutorial instruction
       logText("\nUse Magic (Press '3') to hurl a fireball at it!!");
+      updateStatsDisplay();
     });
   } else if (enemyType === 'giantMushroom') {
     playMusic("big-mushroom-music");
-    gameState.enemyHP = 100;
+    gameState.enemyHP = 120;
+    gameState.playerHP = 100;
+    updateStatsDisplay();
     gameImage.src = 'Art/Bigmush.gif';
     gameImage.classList.add('show');
     
@@ -236,6 +238,7 @@ function startBattle(enemyType) {
       gameState.waitingForInput = false;
       logText("Type 'next' to continue...");
       gameState.gamePhase = 'giantMushroomIntro';
+      updateStatsDisplay();
     });
   }
 }
@@ -256,6 +259,9 @@ function handleCombat(input) {
         if (input === '3') {
           playSound("fireball");
           logText("You hurl a fireball at the tiny mushroom! *FWOOSH*");
+          gameState.enemyHP = 85;
+          gameState.playerMP -= 10;
+          updateStatsDisplay();
           logText("\nThe tiny little mushroom seems unfazed, that's odd.. Watch out he's winding up for a huge attack!");
           logText("\nUse Defend (2) to block the mushroom's attack!");
           gameState.tutorialStep = 2;
@@ -269,6 +275,9 @@ function handleCombat(input) {
         if (input === '2') {
           playSound("defend");
           logText("You raise your shield just in time! *CLANG*");
+          gameState.enemyHP = 45;
+          gameState.playerHP = 89;
+          updateStatsDisplay();
           logText("\nYou successfully blocked the tiny mushroom's attack!");
           logText("\nNow use Attack (1) to swing your mighty blade at the tiny mushroom!");
           gameState.tutorialStep = 3;
@@ -283,6 +292,7 @@ function handleCombat(input) {
           playSound("attack1");
           logText("You swing your sword and slice the tiny mushroom in half!");
           gameState.enemyHP = 0;
+          updateStatsDisplay();
           endBattle();
         } else {
           logText("Press '1' to attack!");
@@ -342,6 +352,7 @@ function handleCombat(input) {
         showCombatOptions();
         return;
       }
+
       break;
       
     default:
@@ -371,6 +382,7 @@ function endBattle() {
   gameImage.classList.remove('show');
   
   if (gameState.currentEnemy === 'mushroom') {
+    document.getElementById("stats").style.display = 'none';
     logText("You defeated the Mushroom Creature!");
     logText("+14 Gold Coins");
     gameState.playerCoins += 14;
@@ -381,7 +393,7 @@ function endBattle() {
     clearOutput()
     playSound("cave-collapse");
     logText("With a final CRASH, the Giant Mushroom collapses! As it dies, it releases healing spores...");
-    logText("+50 Gold Coins (Bonus for defeating a boss!)");
+    logText("+50 Gold Coins");
     gameState.playerCoins += 50;
     logText("Type 'next' to continue...");
     gameState.gamePhase = 'endgame';
@@ -390,26 +402,19 @@ function endBattle() {
 
 function gameOver() {
   playMusic("game-over-music");
+  clearOutput()
   logText("GAME OVER - You have been defeated.");
   logText(`Thank you for playing, ${gameState.playerName}!`);
   gameInput.style.display = 'none';
   gameState.gameOver = true;
   gameState.inBattle = false;
   gameImage.classList.remove('show');
+
+  document.getElementById("stats").style.display = 'none';
 }
 
 // === EVENT LISTENERS ===
 gameInput.addEventListener('keypress', handleInput);
-
-const submitBtn = document.getElementById("submit-button");
-
-submitBtn.addEventListener("click", () => {
-  // Simulate Enter key behavior
-  const event = new KeyboardEvent("keypress", {
-    key: "Enter"
-  });
-  gameInput.dispatchEvent(event);
-});
 
 // Start the game by asking for player name
 logText("Welcome to Journey to Welch!");
