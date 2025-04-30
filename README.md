@@ -1,6 +1,8 @@
 # Journey to Welch: A Text-Based Fantasy Adventure Game
 Text-based Adventure Game written using HTML, CSS, and JavaScript.
 
+To play, download the code as a .zip file, then open 'menu.html' to start the game!
+
 # Website Appearance and Interface:
 The website will consist of two pages: A title page with the name of the game, a start button, and credits. Clicking the start button will take you to the actual game page. The game page will consist of a text input box for the player to interact with the game, a submit button to send your commands to the game, and a window that will print the game’s text output. There may also be another window to display graphics depending on time. 
 
