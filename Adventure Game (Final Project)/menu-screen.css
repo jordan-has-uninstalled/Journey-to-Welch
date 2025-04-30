@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-family: 'Black Chancery', sans-serif;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Seagram', sans-serif;
 }
 
 .main-content {
@@ -37,10 +37,10 @@ body {
 }
 
 .start-button {
+    font-family: 'Seagram', sans-serif;
     background: transparent;
     border: none;
-    color: white;
-    font-family: 'Seagram', sans-serif;
+    color: #f8d56b;
     font-size: 32px;
     cursor: pointer;
     text-shadow: 
@@ -51,20 +51,26 @@ body {
     margin-bottom: 60px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     margin: 10px 0;
     padding: 10px 30px;
+    backdrop-filter: blur(5px);
 }
 
 .start-button:hover {
     transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.start-button:active {
+    transform: translateY(1px);
 }
 
 .menu-button {
+    font-family: 'Seagram', sans-serif;
     background: transparent;
     border: none;
-    color: white;
-    font-family: 'Seagram', sans-serif;
+    color: #f8d56b;
     font-size: 20px;
     cursor: pointer;
     text-shadow: 
@@ -76,7 +82,8 @@ body {
     padding: 10px 30px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 .menu-button:hover {
@@ -89,16 +96,17 @@ body {
 }
 
 .credits-footer {
+    letter-spacing: 2px;
     position: relative;
     width: 100%;
     text-align: center;
-    color: white;
+    color: #f8d56b;
     font-size: 18px;
     text-shadow: 
-        1px 1px 2px rgba(0, 0, 0, 0.8);
+        1px 1px 2px rgba(0, 0, 0, 1);
     padding: 20px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
     overflow-x: auto;
 }
@@ -115,11 +123,14 @@ body {
     flex-direction: column;
     align-items: center;
     min-width: 200px;
+    color: white;
 }
 
 .credit-role {
+    font-family: 'Seagram', sans-serif;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #f8d56b;
 }
 
 @media (max-width: 1000px) {
@@ -134,4 +145,9 @@ body {
 @font-face {
     font-family: 'Seagram';
     src: url('fonts/Seagram tfb.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Black Chancery';
+    src: url('Fonts/Black\ Chancery.TTF') format('truetype');
 }

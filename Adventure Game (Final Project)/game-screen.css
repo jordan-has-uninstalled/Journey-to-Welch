@@ -1,17 +1,44 @@
-html, body { height:100%; width: 100vw; margin:0; }
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.game-root {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(1);
+    overflow: hidden;
+}
+
 body {
     background: url('Art/Bg.png') center top;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .frame-container {
     position: absolute;
     height: auto;
-    width: 38%;
+    width: 50%;
     margin: auto auto;
     overflow: hidden;
     z-index: 2;
-    transform: translateY(5%) translateX(80%);
+    transform: scale(.9) translateX(50%);
 }
 
 .frame-container img[id="frame"] {
@@ -24,51 +51,53 @@ body {
 div > img[id="enemy-bg"] { 
     position: absolute;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(0.32) translateY(-82%);
+    height: auto;
+    object-fit: fill;
+    transform: scale(.86) translateY(2%);
 }
 
 div > img[id="enemy-bg2"] { 
     position: absolute;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(0.32) translateY(-82%);
+    height: auto;
+    object-fit: fill;
+    transform: scale(.86) translateY(2%);
 }
 
 #game-output {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     position: absolute;
     top: 43%;
-    left: 20%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60%;
     height: 25%;
-    background: transparent;
-    border: none;
     padding: 8px;
     box-sizing: border-box;
-    font: 16px 'Seagram', sans-serif;
+    font: 25px 'Seagram', sans-serif;
     letter-spacing: 3px;
-    overflow-y: hidden;
-    white-space: pre-wrap;
     color: white;
-    transition: overflow-y 0.2s ease;
+    text-align: center;
+    background: transparent;
+    border: none;
+    white-space: pre-wrap;
+    overflow-y: hidden;
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 0.8),
         0 0 8px rgba(0, 0, 0, 0.5);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 #game-output p {
-    margin: 0.5em 0;
+    margin: 0.5em auto; /* Center paragraphs horizontally */
+    width: fit-content; /* Makes paragraphs only as wide as their content */
+    text-align: center; /* Ensures text within paragraphs is centered */
+    padding: 0 20px; /* Add some horizontal padding */
 }
 
-
 #game-output p:first-child {
+    margin: 0.5em auto; /* Same as other paragraphs */
     text-align: center;
-    font-size: 17px; 
-    margin-bottom: 1em;
     text-shadow: 
         3px 3px 6px rgba(0, 0, 0, 0.9),
         0 0 12px rgba(0, 0, 0, 0.7);
@@ -95,37 +124,37 @@ div > img[id="enemy-bg2"] {
         2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-#stats {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: 'Seagram';
-    display: none;
-    transform: translateX(-195%) translateY(20%);
-}
-
 #stats-container {
-    position: absolute;
-    top: 0%;
-    right: 25%;
-    width: 150px;
+    width: auto;
+    height: auto;
 }
 
 #stats {
+    position: absolute;
+    top: 100px;
+    left: 115px;
     color: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    font-family: 'Seagram';
-    display: none;
-    transform: translateX(-195%) translateY(20%);
+    font-family: 'Seagram', sans-serif;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 1px #000;
+    line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#stats.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 #stats p {
-    margin: 5px 0;
-    font-size: 14px;
+    width: fit-content;
+    height: fit-content;
+    margin: 6px 0;
+    font-size: 28px;
     text-shadow: 1px 1px 1px #000;
 }
 
@@ -159,7 +188,7 @@ div > img[id="enemy-bg2"] {
     position: absolute;
     top: 12%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: scale(1.5) translateX(-30%);
     width: 200px;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -170,7 +199,7 @@ div > img[id="enemy-bg2"] {
     position: absolute;
     top: 8%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: scale(1.5) translateX(-30%) translateY(10%);
     width: 125px;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -182,33 +211,35 @@ div > img[id="enemy-bg2"] {
 }
 
 #menu-button {
-    position: absolute;
-    top: 8%;
-    left: 2%;
-    width: auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: white;
+    position: fixed; /* Changed from absolute to fixed */
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #f8d56b; /* Golden text color */
     font-family: 'Seagram', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
-    z-index: 100;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1000; /* Higher than game elements */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Remove any existing transform properties */
+    transform: none !important; 
 }
 
 #menu-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-    transform: translateY(-1px);
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #menu-button:active {
     transform: translateY(1px);
+    box-shadow: none;
 }
 
 @font-face {

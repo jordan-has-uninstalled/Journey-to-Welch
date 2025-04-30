@@ -3,90 +3,119 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Seagram', sans-serif;
-    background: url('../Art/Bg.png') repeat center top;
+    font-family: 'Black Chancery', sans-serif;
+    background: url('../Art/Bg.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #instructions {
-    margin: 5% 10% 5% 10%;
-    padding: 2%;
-    background: rgba(0, 0, 0, 0.6);
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 70%;
+    max-height: 80vh;
+    padding: 30px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    letter-spacing: .8px;
+}
+
+#instructions::-webkit-scrollbar {
+    width: 8px;
+}
+
+#instructions::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
 }
 
 #menu-button {
-    position: absolute;
-    top: 4%;
-    left: 2%;
-    width: auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: white;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #f8d56b;
     font-family: 'Seagram', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     z-index: 100;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     transition: all 0.2s ease;
 }
 
 #menu-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-    transform: translateY(-1px);
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
 }
 
 #menu-button:active {
     transform: translateY(1px);
 }
 
-h1, h2 {
-    text-align: center;
-    margin-top: 0;
-}
-
 h1 {
-    font-size: 50px;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
+    margin: 0 0 1.5rem 0;
     letter-spacing: 3px;
+    color: #f8d56b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 h2 {
-    font-size: 40px;
-    margin: 25px 0 15px;
-    letter-spacing: 3px;
-}
-
-li {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    font-size: 2.2rem;
+    margin: 2rem 0 1rem 0;
+    color: #f8d56b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
     text-align: center;
-    font-size: 25px;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    padding: 0 10%;
 }
 
 ul {
-    padding-left: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+    display: inline-block;
 }
 
 li {
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+li:before {
+    content: "•";
+    color: #f8d56b;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
 }
 
 @font-face {
     font-family: 'Seagram';
-    src: url('../fonts/Seagram tfb.ttf') format('truetype');
+    src: url('Fonts/Seagram tfb.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Black Chancery';
+    src: url('Fonts/Black\ Chancery.TTF') format('truetype');
 }
