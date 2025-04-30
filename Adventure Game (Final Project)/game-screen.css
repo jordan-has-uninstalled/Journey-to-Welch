@@ -136,18 +136,6 @@ div > img[id="enemy-bg"] {
     font-weight: bold;
 }
 
-#submit-button {
-    position: absolute;
-    top: 77%;
-    left: 82%;
-    padding: 60px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-}
-#submit-button:hover { opacity: 0.3; }
-
 #game-image {
     position: absolute;
     top: 12%;
