@@ -21,7 +21,8 @@ const WORD_DELAY = 70;
 const gameOutput = document.getElementById("game-output");
 const gameInput = document.getElementById("game-input");
 const gameImage = document.getElementById("game-image");
-const enemyBackground = document.getElementById("enemy-bg");
+const enemyBgOutside = document.getElementById("enemy-bg");
+const enemyBgDungeon = document.getElementById("enemy-bg2");
 
 // === TEXT OUTPUT FUNCTIONS ===
 function logText(text) {
@@ -157,7 +158,6 @@ function handleInput(e) {
     case 'giantMushroomIntro':
       if (input === 'next') {
         clearOutput();
-        logText("GIANT TOXIC MUSHROOM: 100HP (Deals poison damage!)");
         playSound("mushroom-roar");
         showCombatOptions();
         gameState.gamePhase = 'battle';
@@ -196,6 +196,8 @@ function showOpeningMessage() {
 }
 
 function showEndGameMessage() {
+  enemyBgDungeon.style.display = 'none';
+  enemyBgOutside.style.display = 'block';
   clearOutput();
   logText("Congratulations! You've completed the dungeon!");
   logText(`Thank you for playing, ${gameState.playerName}!`);
@@ -212,6 +214,8 @@ function startBattle(enemyType) {
   document.getElementById("stats").style.display = 'block';
 
   if (enemyType === 'mushroom') {
+    enemyBgOutside.style.display = 'none';
+    enemyBgDungeon.style.display = 'block';
     playSound("cave-ambience")
     playMusic('tiny-mushroom-music');
     gameState.enemyHP = 100;
@@ -220,7 +224,6 @@ function startBattle(enemyType) {
     gameImage.classList.add('show');
     
     logTextOneWordAtATime("You step into the Murky Dungeon and see a tiny Mushroom Creature charging at you!", WORD_DELAY, () => {
-      logText("TINY MUSHROOM CREATURE: 100HP");
       // show first tutorial instruction
       logText("\nUse Magic (Press '3') to hurl a fireball at it!!");
       updateStatsDisplay();
@@ -229,6 +232,7 @@ function startBattle(enemyType) {
     playMusic("big-mushroom-music");
     gameState.enemyHP = 120;
     gameState.playerHP = 100;
+    gameState.playerMP = 20;
     updateStatsDisplay();
     gameImage.src = 'Art/Bigmush.gif';
     gameImage.classList.add('show');

@@ -29,6 +29,14 @@ div > img[id="enemy-bg"] {
     transform: scale(0.32) translateY(-82%);
 }
 
+div > img[id="enemy-bg2"] { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(0.32) translateY(-82%);
+}
+
 #game-output {
     scrollbar-width: none;
     -ms-overflow-style: none;
