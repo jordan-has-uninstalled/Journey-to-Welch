@@ -2,24 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journey to Welch: A Fantasy Adventure Game</title>
     <link rel="stylesheet" href="game-screen.css" />
 </head>
-<body>      
-    <div id="menu-button" onclick="location.href='menu.html'">MENU</div>
-    <div id="enemy-bg-div">
-      <img id="enemy-bg" src="Art/Fightbg.png" /> <!-- outside -->
-      <img id="enemy-bg2" src="Art/Fightbg2.png" style="display: none;" /> <!-- dungeon (hidden until game starts) -->
-  </div>
+<body>
+  <div id="menu-button" onclick="location.href='menu.html'">MENU</div>    
+  <div class="game-root">
+    <!-- all game elements go here -->
+    
     <div class="frame-container">
-        <img id="frame" src="Art/new-ui.png" alt="Frame" />
-        <img id="game-image" src="" alt="Enemy" />
-        <div id="game-output"></div>
-        <div id="stats-container">
-          <div id="stats"></div>
-        </div>
-        <input id="game-input" type="text" autocomplete="off" />
+      <div id="enemy-bg-div">
+        <img id="enemy-bg" src="Art/Fightbg.png" />
+        <img id="enemy-bg2" src="Art/Fightbg2.png" style="display: none;" />
+      </div>
+      <img id="frame" src="Art/new-ui.png" alt="Frame" />
+      <img id="game-image" src="" alt="Enemy" />
+      <div id="game-output"></div>
+      <div id="stats-container">
+        <div id="stats"></div>
+      </div>
+      <input id="game-input" type="text" autocomplete="off" />
     </div>
     <!-- music -->
     <audio id="bg-music" loop>
@@ -68,7 +71,8 @@
     <audio id="defend">
       <source src="sounds/block.wav" type="audio/mpeg">
     </audio>
-
-    <script src="game.js" defer></script>
+  </div>
+  <!-- game javascript -->
+  <script src="game.js" defer></script>
 </body>
 </html>
