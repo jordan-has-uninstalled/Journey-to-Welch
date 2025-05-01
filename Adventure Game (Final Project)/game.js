@@ -1,3 +1,8 @@
+///  File: game.js
+///  Description: This file contains all the instructions that make the game run – the story text, player/enemy health tracking, how combat works, how to handle player commands, how to update the screen, and how to play sounds.
+///  Author(s): Amaris Aker, Jordan Alvarado, Katia De Los Santos, Lance Henschel, Cash Lusk, Adela Torres, Martin Zuniga
+///  Date: 04-30-2025
+
 // === GAME STATE ===
 const gameState = {
   playerName: '',
