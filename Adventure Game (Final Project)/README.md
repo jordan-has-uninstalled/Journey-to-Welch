@@ -1,8 +1,8 @@
 # Journey to Welch: A Text-Based Fantasy Adventure Game  
 Text-based Adventure Game written using HTML, CSS, and JavaScript.
 <p align="center">
-  <img src="readme-images/menu-screenshot.png" width="45%">
-  <img src="readme-images/gameplay-screenshot.png" width="45%">
+  <img src="../readme-images/menu-screenshot.png" width="45%">
+  <img src="../readme-images/gameplay-screenshot.png" width="45%">
   <br>
   <em>Left: Main menu | Right: Combat interface</em>
 </p>
