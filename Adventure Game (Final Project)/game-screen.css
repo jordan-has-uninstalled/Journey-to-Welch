@@ -96,14 +96,14 @@ div > img[id="enemy-bg2"] {
 }
 
 #game-output p {
-    margin: 0.5em auto; /* Center paragraphs horizontally */
-    width: fit-content; /* Makes paragraphs only as wide as their content */
-    text-align: center; /* Ensures text within paragraphs is centered */
-    padding: 0 20px; /* Add some horizontal padding */
+    margin: 0.5em auto;
+    width: fit-content; 
+    text-align: center;
+    padding: 0 20px;
 }
 
 #game-output p:first-child {
-    margin: 0.5em auto; /* Same as other paragraphs */
+    margin: 0.5em auto;
     text-align: center;
     text-shadow: 
         3px 3px 6px rgba(0, 0, 0, 0.9),
@@ -218,24 +218,23 @@ div > img[id="enemy-bg2"] {
 }
 
 #menu-button {
-    position: fixed; /* Changed from absolute to fixed */
+    position: fixed;
     top: 20px;
     left: 20px;
     padding: 10px 20px;
     background: rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
-    color: #f8d56b; /* Golden text color */
+    color: #f8d56b;
     font-family: 'Seagram', sans-serif;
     font-size: 18px;
     cursor: pointer;
-    z-index: 1000; /* Higher than game elements */
+    z-index: 1000;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* Remove any existing transform properties */
-    transform: none !important; 
+    transform: none; 
 }
 
 #menu-button:hover {
