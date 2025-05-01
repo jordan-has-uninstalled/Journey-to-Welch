@@ -161,7 +161,7 @@ function handleInput(e) {
       break;
     case 'battle':
       if (gameState.inBattle) {
-        handleCombat(command); // Pass lowercase command to combat
+        handleCombat(command); // pass lowercase command to combat
       } else {
         if (command === 'next' && gameState.currentEnemy === 'mushroom') {
           startBattle('giantMushroom');
@@ -268,7 +268,7 @@ function handleCombat(input) {
 
   clearOutput();
   
-  // Handle tutorial sequence for tiny mushroom
+  // handle tutorial sequence for tiny mushroom
   if (gameState.currentEnemy === 'mushroom' && gameState.tutorialStep > 0) {
     switch (gameState.tutorialStep) {
       case 1: // Magic step
@@ -318,19 +318,19 @@ function handleCombat(input) {
     }
   }
   
-  // Normal combat handling (for giant mushroom)
+  // normal combat handling (for giant mushroom)
   switch (input) {
     case '1': // Attack
       const attackSoundNum = Math.floor(Math.random() * 4) + 1;
       playSound(`attack${attackSoundNum}`);
       
-      const playerDamage = Math.floor(Math.random() * 5) + 8; // Player damage between 8 and 12
+      const playerDamage = Math.floor(Math.random() * 5) + 8; // player damage between 8 and 12
       gameState.enemyHP -= playerDamage;
       logText(`You slash at the Giant Mushroom for ${playerDamage} damage!`);
       
-      // Mushroom retaliates with variable damage
+      // mushroom retaliates with variable damage
       if (gameState.currentEnemy === 'giantMushroom') {
-        const retaliationDamage = Math.floor(Math.random() * 13) + 12; // Mushroom retaliation between 12 and 24
+        const retaliationDamage = Math.floor(Math.random() * 13) + 12; // mushroom retaliation between 12 and 24
         gameState.playerHP -= retaliationDamage;
         logText(`The mushroom retaliates with a POISONOUS SLAM for ${retaliationDamage} damage!`);
       }
@@ -340,13 +340,13 @@ function handleCombat(input) {
       playSound("defend");
       
       if (gameState.currentEnemy === 'giantMushroom') {
-        // Reduced damage when defending
-        const defenseDamage = Math.floor(Math.random() * 10) + 5; // Reduced damage between 5 and 15
+        // reduced damage when defending
+        const defenseDamage = Math.floor(Math.random() * 10) + 5; // reduced damage between 5 and 15
         gameState.playerHP -= defenseDamage;
         logText(`The mushroom's attack glances off your shield for ${defenseDamage} damage!`);
         
-        // Small counterattack when defending
-        const counterDamage = 5; // Fixed small counterattack damage
+        // small counterattack when defending
+        const counterDamage = 5;
         gameState.enemyHP -= counterDamage;
         logText(`You counterattack with a quick stab for ${counterDamage} damage!`);
       }
@@ -355,13 +355,13 @@ function handleCombat(input) {
     case '3': // Magic
       if (gameState.playerMP >= 10) {
         playSound("fireball");
-        const magicDamage = 25; // Fixed magic damage
+        const magicDamage = 25;
         gameState.enemyHP -= magicDamage;
         gameState.playerMP -= 10;
         logText(`You hurl a SUPERHEATED FIREBALL at the Giant Mushroom for ${magicDamage} damage!`);
         
-        // Mushroom takes additional burn damage over time
-        const burnDamage = Math.floor(Math.random() * 6) + 5; // Burn damage between 5 and 10
+        // mushroom takes additional burn damage over time
+        const burnDamage = Math.floor(Math.random() * 6) + 5; // burn damage between 5 and 10
         gameState.enemyHP -= burnDamage;
         logText(`The mushroom SCREECHES as it burns for ${burnDamage} additional damage!`);
       } else {
@@ -378,13 +378,13 @@ function handleCombat(input) {
       return;
   }
 
-  // Check enemy health
+  // check enemy health
   if (gameState.enemyHP <= 0) {
     endBattle();
     return;
   }
 
-  // Check player health
+  // check player health
   if (gameState.playerHP <= 0) {
     gameOver();
     return;
@@ -444,6 +444,6 @@ gameInput.addEventListener('keypress', handleInput);
 window.addEventListener('resize', scaleGameRoot);
 window.addEventListener('DOMContentLoaded', scaleGameRoot);
 
-// Start the game by asking for player name
+// start the game by asking for player name
 logText("Welcome to Journey to Welch!");
 logText("Please enter your name to begin:");
