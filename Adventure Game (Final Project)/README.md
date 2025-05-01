@@ -1,107 +1,114 @@
-# Journey to Welch: A Text-Based Fantasy Adventure Game
+# Journey to Welch: A Text-Based Fantasy Adventure Game  
 Text-based Adventure Game written using HTML, CSS, and JavaScript.
 
-# Website Appearance and Interface:
-The website will consist of two pages: A title page with the name of the game, a start button, and credits. Clicking the start button will take you to the actual game page. The game page will consist of a text input box for the player to interact with the game, a submit button to send your commands to the game, and a window that will print the game’s text output. There may also be another window to display graphics depending on time. 
+## Website Appearance and Interface:  
+The game consists of three main pages:  
+1. **Title Page** (menu.html) - Features the game logo, start button, instructions button, and team credits  
+2. **Game Page** (game-screen.html) - Contains:  
+   - Text output window with typewriter effect  
+   - Command input field  
+   - Enemy display area  
+   - Player/enemy stats  
+   - Hand-drawn UI
+3. **Instructions Page** (how-to-play.html) - Explains game controls and mechanics  
 
-The game itself will be text only, the website that contains the game will have colorful, hand-drawn graphics. Graphics for the website will include but aren’t limited to the webpage’s background, the borders for the game text and the input box, the submit button, and a detailed title screen webpage with credits. 
+The interface uses custom fantasy-themed artwork including:  
+- Hand-drawn background images  
+- Hand-drawn UI frame (new-ui.png)  
+- Animated enemy sprites (Lilmush.gif, Bigmush.gif)  
+- Themed fonts (Seagram, Black Chancery)  
 
-Depending on time it is also a goal to have graphics that correspond to things that happen in game. For example, if you fight an enemy, you will see a graphic of your character fighting it in its own window. 
+## Game Rules, Features, and Challenges:  
 
-# Game Rules, Features, and Challenges:
+* **Rules and Mechanics**:  
+    - Turn-based combat system with HP/MP management  
+    - Three combat actions: Attack (1), Defend (2), Magic (3)  
+    - Tutorial battle teaches mechanics progressively  
+    - Two enemy encounters with different difficulty levels  
+    - Game tracks: Player HP, MP, Gold Coins  
 
-* Rules and Mechanics:
-    - The game is turn-based, and players must choose between actions like ATTACK, DEFEND, or MAGIC during combat.
-    - Health Points (HP) and Magic Points (MP) are tracked throughout the journey.
-    - Players can earn coins, skill points, and titles through exploration and combat.
-    - Player decisions affect the narrative path and can lead to multiple endings.
+* **Features**:  
+    - Typewriter text effect for immersive storytelling  
+    - Background music and sound effects  
+    - Responsive design that scales to different screen sizes  
+    - Animated enemy sprites during combat  
+    - Visual damage feedback through stat displays  
 
-* Features:
-    - Interactive narrative with meaningful choices
-    - Classic RPG mechanics like skill trees, item purchases, and boss fights
-    - Visual and audio assets to enhance immersion
-    - A responsive webpage that hosts the game in a browser
-  
-* Challenges Presented to Players:
-    - Strategic combat choices to defeat enemies while managing limited HP and MP
-    - Navigating story forks that can lead to success or failure based on decisions
-    - Balancing when to take risks, use resources, or avoid conflict
-    - Uncovering hidden content, skills, and outcomes through replayability
+* **Challenges**:  
+    - Strategic resource management (HP/MP)  
+    - Choosing optimal actions in combat  
+    - Surviving against the powerful Giant Mushroom
 
+## Key Personnel:  
+* **Amaris Aker** - JavaScript Developer (Story Elements/Dialogue/Choices and Paths)  
+* **Jordan Alvarado** - Lead JavaScript Developer (Logic/Flow and Implementation)  
+* **Katia De Los Santos** - CSS Developer  
+* **Lance Henschel** - HTML Developer 
+* **Cash Lusk** - Game Art Designer  
+* **Adela Torres** - HTML Developer 
+* **Martin Zuniga** - Sound Designer
 
-# Key Personnel:
-* Amaris Aker - (JavaScript Developer–Story Elements/Dialogue/Choices and Paths)
-* Jordan Alvarado - (Lead JavaScript Developer–Logic/Flow and Implementation)
-* Katia De Los Santos - (CSS Developer)
-* Lance Henschel - (HTML Developer)
-* Cash Lusk - (Game Art Designer)
-* Adela Torres - (HTML Developer)
-* Martin Zuniga - (Sound Designer)
+## Technical Implementation:  
 
-# SOW (Statement of Work):
-* Web Development: 
-    - Designing and building a responsive and interactive website using HTML, CSS, and Javascript.
-    - Ensure the website can be compatible desktop and mobile users
-    - Provide a clean and user-friendly UI to produce a quality experience
-* Art Production:
-    - Produce original 2D illustrations throughout to enhance the experience of using the website
-    - Optimized with the text associated to help with the performance
-* Game Development:
-    - Provide text parsing and choice selection to maneuver through the game
-    - Implement core game mechanics using JavaScript, including combat systems, inventory management, and progression systems
-* Sound Design / Production: 
-    - Create and find sounds to use for the game to add immersion
+* **Core Systems**:  
+    - Game state management using JavaScript objects  
+    - DOM manipulation for dynamic content updates  
+    - Event listeners for player input handling  
+    - Audio API for sound effects and music  
+    - CSS transforms for responsive scaling  
 
-# Description of Work:
-* Developing the Game Engine:
-    - Build the complete game engine using JavaScript, incorporating systems for combat, story branching logic, and player stat management
-* Narrative Design:
-    - Provide a rich and interactive storyline featuring multiple paths and endings to encourage replayability 
-* Visual Asset Creation:
-    - Produce original 2D digital artwork
-* Audio Production:
-    - Compose and integrate original sound effects and background music to enhance the immersion to the player
-* Website Development:
-    - Design and style a responsive web page using HTML, CSS, and JavaScript to present the game across devices
-* Quality Assurance:
-    - Conduct thorough testing and debugging to ensure smooth gameplay and stability while using the website
-* Project Documentation:
-    - Prepare and deliver the supporting documentation, including the project overview, technical notes, and credits
+* **Key Files**:  
+    - `game.js` (15KB) - Core game logic and systems  
+    - `game-screen.css` (6KB) - Game page styling  
+    - `menu-screen.css` (4KB) - Title screen styling  
+    - `how-to-screen.css` (3KB) - Instructions page styling  
 
-# Audio / Sound Design
-* Atmosphere - The music will be used to create an atmosphere of fantasy and magic. We want to create an environment inspired by things like: Runescape, Elder Scrolls, or The Witcher.
-* Key Actions - Sounds will not only be added during gameplay, but for key actions like:
-    - Correct or Incorrect command input
-    - Items obtained during gameplay or purchased in merchant shops
-    - Opening/Closing/Navigating the menu
-    - Special events triggered after the player makes a choice.
-* Background Music - Different music is added in order to add variety. From combat, important decision making, different environments,  the merchant’s shop, and so forth, this can help attract the player as they are the main character in the story. 
-* Accessibility - Sounds cues will be provided to the player to signal important events:
-    - Invalid commands given (Purchasing items with insufficient funds, typing invalid commands, etc.)
-    - Positive sounds to indicate successful progress or correct actions
-* Sound Testing - After audio and sounds are added, all audio will be tested to ensure sound levels and cues will not interfere with the player’s engagement into the narrative.
+* **Assets**:  
+    - 2 Enemy sprites with animations  
+    - 5 Background music tracks  
+    - 10+ Sound effects  
+    - 2 Custom font families  
 
-# Budget:
-This is a zero-budget academic project. No paid tools or services will be used. All resources (software, hosting, collaboration tools) will be free to use under appropriate licenses.
+## Audio/Sound Design:  
+* **Atmosphere**:  
+    - Different music for exploration, combat, and game states  
+    - Ambient dungeon sounds  
+* **Combat Feedback**:  
+    - Unique sounds for attack, defend, and magic actions  
+    - Enemy reaction sounds  
+    - Damage sound cues
 
-* Tools: Visual Studio Code, GitHub
+## How to Play:  
+1. Launch `menu.html` in your web browser  
+2. Click "BEGIN JOURNEY" to start  
+3. Enter your name when prompted  
+4. Follow on-screen instructions:  
+   - Type 'start' and 'next' to progress the story  
+   - In combat, enter 1 (Attack), 2 (Defend), or 3 (Magic)  
+5. Defeat both mushroom enemies to complete the game  
 
-* Hosting: GitHub Pages (free)
+## Development Challenges:  
+* **CSS Positioning**:  
+    - Precise placement of UI elements with absolute positioning  
+    - Maintaining aspect ratio across different screens  
+* **JavaScript**:  
+    - Managing game state transitions  
+    - Implementing the typewriter text effect  
+    - Combat system balance and feedback  
+* **Asset Integration**:  
+    - Ensuring all visual and audio assets load correctly  
+    - Optimizing performance with multiple assets  
 
-* Estimated Cost: $0.00
+## Future Enhancement Ideas:  
+- Expanded story with more branching paths  
+- Additional enemy types and combat abilities  
+- Inventory system with usable items  
+- Save/load functionality  
+- More detailed stats and leveling system  
 
-# Questions to Address
-* What we want to do:
-    - Develop a text-based fantasy adventure game with interactive storytelling, turn-based combat mechanics, a custom webpage, and original artwork.
-* Why we want to do it:
-    - To provide players with a story-driven RPG experience that emphasizes player choice, exploration, narrative immersion, and visual appeal.
-* How we plan to do it:
-    - By designing and programming the game in JavaScript, developing a responsive webpage using HTML and CSS, and creating original artwork to enhance the game's world and characters.
-* How will we know if we have succeeded:
-    - Completion of all game, webpage, and artwork deliverables
-    - Positive feedback from playtesting sessions
-    - A cohesive user experience across both gameplay and visual design
-* What benefits would accrue if the project is successful:
-    - Delivery of a fully functional, replayable game hosted on a professional webpage
-    - Development of valuable skills in game design, web development, and digital illustration
-    - The potential to expand into a broader RPG project or portfolio piece for creative and technical roles
+## Budget:  
+This is a zero-budget academic project developed with:  
+* **Tools**: Visual Studio Code, GitHub  
+* **Hosting**: GitHub (free)  
+* **Assets**: All original artwork and royalty music/sounds  
+* **Estimated Cost**: $0.00  
